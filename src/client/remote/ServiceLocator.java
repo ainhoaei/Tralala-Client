@@ -8,7 +8,7 @@ import server.remote.IPagoF;
 import server.remote.IUsuarioF;
 
 
-
+///
 
 public class ServiceLocator {
 	
