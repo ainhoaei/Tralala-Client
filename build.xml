@@ -6,7 +6,7 @@
 	<property name="lib.dir" location="lib"/>
 	<property name="rmiregistry.port" value="1099"/>
 	<property name="rmiregistry.IP" value="127.0.0.1"/> 
-	<property name="server" value="nombre"/>
+	<property name="server.Name" value="Tralala"/>
 	<property name="policy.file" location="security/java.policy"/>	
 
 	<path id="classpath">
@@ -27,7 +27,7 @@
     </target>
     
 	<target name="client" depends="build"  description="Runs Client program">
-		<java classname="client.controller.ControllerCancion" classpathref="classpath" fork="true">
+		<java classname="client.MainPrograma" classpathref="classpath" fork="true">
 			<jvmarg value="-Djava.security.policy=${policy.file}"/>			
         	<arg value="${rmiregistry.IP}"/> 
 	 		<arg value="${rmiregistry.port}"/> 
