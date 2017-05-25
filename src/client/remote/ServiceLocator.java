@@ -10,7 +10,7 @@ import server.remote.ICancionF;
 import server.remote.IPagoF;
 import server.remote.IUsuarioF;
 
-public class ServiceLocator {
+public class ServiceLocator{
 	
 	private ICancionF cancion;
 	private IUsuarioF usuario;
