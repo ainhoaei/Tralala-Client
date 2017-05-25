@@ -2,8 +2,8 @@ package client.gui;
 
 import javax.swing.JFrame;
 
-import client.controller.ControllerCancion;
-import client.controller.ControllerUsuario;
+
+import client.controller.*;
 
 public class GUIRegistrar extends JFrame{
 	
@@ -12,7 +12,7 @@ public class GUIRegistrar extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public GUIRegistrar(ControllerUsuario usuarioC, ControllerCancion cancionC){
+	public GUIRegistrar(ControllerUsuario usuarioC, ControllerCancion cancionC, ControllerPago pagoC){
 		
 	}
 

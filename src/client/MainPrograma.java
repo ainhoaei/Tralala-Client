@@ -4,6 +4,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import client.controller.ControllerCancion;
+import client.controller.ControllerPago;
 import client.controller.ControllerUsuario;
 import client.gui.GUIMenu;
 import client.remote.ServiceLocator;
@@ -15,11 +16,14 @@ public static void main(String[] args) {
 		boolean reproduciendo = false;
 		
 		ServiceLocator serviceLocator = new ServiceLocator();
-		//serviceLocator.setServiceCancion(args[0], args[1], args[2]);
-		serviceLocator.setServiceCancion("127.0.0.1", "1099", "Tralala");
-		
+		serviceLocator.setServiceUsuario(args[0], args[1],  args[2]);
 		ControllerUsuario irc = new ControllerUsuario(serviceLocator);
+		
+		serviceLocator.setServiceCancion(args[0], args[1], args[3]);
 		ControllerCancion rlc = new ControllerCancion(serviceLocator);
+		
+		serviceLocator.setServicePago(args[0], args[1], args[4]);
+		ControllerPago p = new ControllerPago(serviceLocator);
 		
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -28,7 +32,7 @@ public static void main(String[] args) {
 			((Throwable) e).printStackTrace();
 		}
 		
-		GUIMenu mgui = new GUIMenu(irc, rlc);
+		GUIMenu mgui = new GUIMenu(irc, rlc, p);
 		mgui.setVisible(true);
 		
 		

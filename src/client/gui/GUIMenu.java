@@ -1,6 +1,7 @@
 package client.gui;
 
 import java.awt.Color;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,8 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import client.controller.ControllerCancion;
-import client.controller.ControllerUsuario;
+import client.controller.*;
 
 public class GUIMenu extends JFrame {
 	
@@ -28,7 +28,7 @@ public class GUIMenu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public GUIMenu(ControllerUsuario usuarioC, ControllerCancion cancionC) {
+	public GUIMenu(ControllerUsuario usuarioC, ControllerCancion cancionC, ControllerPago pagoC) {
 		
 		setTitle("TRALALA");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,7 +65,7 @@ public class GUIMenu extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				setVisible(false);
-				GUIRegistrar fReg = new GUIRegistrar(usuarioC, cancionC);
+				GUIRegistrar fReg = new GUIRegistrar(usuarioC, cancionC, pagoC);
 				fReg.setVisible(true);
 			}
 		});
@@ -79,7 +79,7 @@ public class GUIMenu extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				GUIReproducir fRep = new GUIReproducir(usuarioC, cancionC);
+				GUIReproducir fRep = new GUIReproducir(usuarioC, cancionC, pagoC);
 				fRep.setVisible(true);
 				
 			}

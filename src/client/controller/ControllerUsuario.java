@@ -72,7 +72,7 @@ public class ControllerUsuario{
 		System.out.println("Introduzca password:");
 		String pass = System.console().readLine();
 		try {
-			 resultado = serviceLocator.getServiceUsuario().checkAddUser(user);
+			resultado = serviceLocator.getServiceUsuario().checkAddUser(user);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

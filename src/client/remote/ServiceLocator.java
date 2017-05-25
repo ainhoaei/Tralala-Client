@@ -1,7 +1,10 @@
 package client.remote;
 
+import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RMISecurityManager;
+import java.rmi.RemoteException;
 
 import server.remote.ICancionF;
 import server.remote.IPagoF;
@@ -23,6 +26,7 @@ public class ServiceLocator {
 		} catch (Exception ex) {
 			System.err.println("# Error locating remote façade: " + ex);
 		}		
+		
 	}
 	
 	public void setServiceUsuario(String ip, String port, String serverName) {
