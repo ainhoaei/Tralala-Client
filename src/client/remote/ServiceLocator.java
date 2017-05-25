@@ -7,9 +7,6 @@ import server.remote.ICancionF;
 import server.remote.IPagoF;
 import server.remote.IUsuarioF;
 
-
-///
-
 public class ServiceLocator {
 	
 	private ICancionF cancion;
@@ -20,7 +17,6 @@ public class ServiceLocator {
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new RMISecurityManager());
 		}
-		
 		try {		
 			String URL = "//" + ip + ":" + port + "/" + serverName;
 			this.cancion = (ICancionF) Naming.lookup(URL);

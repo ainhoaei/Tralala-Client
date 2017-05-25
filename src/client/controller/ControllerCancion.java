@@ -5,7 +5,8 @@ import java.rmi.RemoteException;
 import client.remote.ServiceLocator;
 
 public class ControllerCancion{
-
+//LOS METODOS DE addFav y removeFav en el TW4.5.6 LAS PUSIMOS EN EL GESTOR DE USUARIO,
+	//HAY QUE PONERLAS EN EL CONTROLLER CANCION O EN EL CONTROLLER USUARIO?
 
 	public ServiceLocator serviceLocator;
 	
@@ -59,6 +60,18 @@ public class ControllerCancion{
 		*/
 	}
 	
+	public void playPrevious(int cancion)
+	{
+		/*
+		try {
+			return this.serviceLocator.getServiceCancion().playPrevious(cancion);
+		} catch (RemoteException e) {
+			System.err.println("# Error: " + e);
+			return;
+		}
+		*/
+	}
+	
 	public void rewind() {
 		/*
 		try {
@@ -69,10 +82,5 @@ public class ControllerCancion{
 		}
 		*/
 	}
-	
-	
-
-
-
 
 }
