@@ -37,7 +37,7 @@ public class ServiceLocator{
 	public void setServiceUsuario(String ip, String port, String serverName) {
 		
 		String URL = "//" + ip + ":" + port + "/" + serverName;
-		System.out.println("usuario interfaz: "+ URL);
+		//System.out.println("usuario interfaz: "+ URL);
 		
 		try {		
 			

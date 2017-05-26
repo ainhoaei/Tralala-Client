@@ -17,7 +17,6 @@ public static void main(String[] args) {
 		boolean reproduciendo = false;
 		
 		ServiceLocator serviceLocator = new ServiceLocator();
-		System.out.println("Main: llamando setServiceUsuario " + args[2]);
 		serviceLocator.setServiceUsuario(args[0], args[1],  args[2]);
 		ControllerUsuario irc = new ControllerUsuario(serviceLocator);
 		

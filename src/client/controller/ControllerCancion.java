@@ -40,7 +40,12 @@ public class ControllerCancion{
 	}
 	
 	public void playTrack(int cancion) {
-		serviceLocator.getServiceCancion().playTrack(cancion);
+		try {
+			serviceLocator.getServiceCancion().playTrack(cancion);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
