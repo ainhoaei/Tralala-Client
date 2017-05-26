@@ -7,6 +7,7 @@ import client.controller.ControllerCancion;
 import client.controller.ControllerPago;
 import client.controller.ControllerUsuario;
 import client.gui.GUIMenu;
+import client.gui.GUIReproducir;
 import client.remote.ServiceLocator;
 
 public class MainPrograma {
@@ -16,14 +17,15 @@ public static void main(String[] args) {
 		boolean reproduciendo = false;
 		
 		ServiceLocator serviceLocator = new ServiceLocator();
+		System.out.println("Main: llamando setServiceUsuario " + args[2]);
 		serviceLocator.setServiceUsuario(args[0], args[1],  args[2]);
 		ControllerUsuario irc = new ControllerUsuario(serviceLocator);
 		
-		serviceLocator.setServiceCancion(args[0], args[1], args[3]);
-		ControllerCancion rlc = new ControllerCancion(serviceLocator);
-		
 		serviceLocator.setServicePago(args[0], args[1], args[4]);
 		ControllerPago p = new ControllerPago(serviceLocator);
+		
+		serviceLocator.setServiceCancion(args[0], args[1], args[3]);
+		ControllerCancion rlc = new ControllerCancion(serviceLocator);
 		
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -34,6 +36,9 @@ public static void main(String[] args) {
 		
 		GUIMenu mgui = new GUIMenu(irc, rlc, p);
 		mgui.setVisible(true);
+		
+		GUIReproducir rgui = new GUIReproducir(irc, rlc, p);
+		rgui.setVisible(true);
 		
 		
 	}

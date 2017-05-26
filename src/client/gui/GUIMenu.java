@@ -16,6 +16,9 @@ import client.controller.*;
 
 public class GUIMenu extends JFrame {
 	
+	private ControllerUsuario usuarioC;
+	private ControllerCancion cancionC;
+	private ControllerPago pagoC;
 
 	/**
 	 * 
@@ -29,6 +32,10 @@ public class GUIMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public GUIMenu(ControllerUsuario usuarioC, ControllerCancion cancionC, ControllerPago pagoC) {
+		
+		this.usuarioC = usuarioC;
+		this.cancionC = cancionC;
+		this.pagoC = pagoC;
 		
 		setTitle("TRALALA");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,12 +58,13 @@ public class GUIMenu extends JFrame {
         //panel.setBackground(Color.orange);
         
 		JLabel lblbienvenidoATralala = new JLabel("¡Aplicacion Tralala!");
-		lblbienvenidoATralala.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblbienvenidoATralala.setFont(new Font("Berlin Sans FB", Font.PLAIN, 16));
 		lblbienvenidoATralala.setBounds(125, 0, 179, 16);
 		panel.add(lblbienvenidoATralala);
 		
 		JButton btnRegistrarse = new JButton("REGISTRARSE");
-		btnRegistrarse.setBounds(100, 82, 200, 50);
+		btnRegistrarse.setBounds(100, 100, 200, 50);
+		btnRegistrarse.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		panel.add(btnRegistrarse);
 		
 		btnRegistrarse.addActionListener(new ActionListener() {
@@ -70,20 +78,7 @@ public class GUIMenu extends JFrame {
 			}
 		});
 		
-		JButton btnReproducirCancion = new JButton("REPRODUCIR CANCION");
-		btnReproducirCancion.setBounds(100, 150, 200, 50);
-		panel.add(btnReproducirCancion);
 		
-		btnReproducirCancion.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				GUIReproducir fRep = new GUIReproducir(usuarioC, cancionC, pagoC);
-				fRep.setVisible(true);
-				
-			}
-		});
 	}
 
 }
