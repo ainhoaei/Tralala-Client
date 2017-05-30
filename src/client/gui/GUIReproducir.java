@@ -62,17 +62,6 @@ public class GUIReproducir extends JFrame{
 		btnReproducirCancion.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		panel.add(btnReproducirCancion);
 		
-		/*btnReproducirCancion.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				cancionC.playTrack(2);
-				JOptionPane.showMessageDialog(null, "Mirar la consola");
-				
-			}
-		});*/
-		
 		btnReproducirCancion.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				buttonReproducirCancionPerformed(evt);
@@ -81,11 +70,11 @@ public class GUIReproducir extends JFrame{
 	}
 	
 	private void buttonReproducirCancionPerformed(ActionEvent evt) {
-		//String ac = acronym.getText().trim().toUpperCase();
-		//String des = description.getText().trim().toUpperCase();
 		// Calling the Controller
 		JOptionPane.showMessageDialog(null, "La cancion se reproducirá en la consola");
 		cancionC.playTrack(2);
+		
+		
 	
 	}
 

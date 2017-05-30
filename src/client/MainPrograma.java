@@ -14,8 +14,6 @@ public class MainPrograma {
 
 public static void main(String[] args) {	
 		
-		boolean reproduciendo = false;
-		
 		ServiceLocator serviceLocator = new ServiceLocator();
 		serviceLocator.setServiceUsuario(args[0], args[1],  args[2]);
 		ControllerUsuario irc = new ControllerUsuario(serviceLocator);
