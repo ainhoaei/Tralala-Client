@@ -15,7 +15,6 @@ public class ServiceLocator{
 	private ICancionF cancion;
 	private IUsuarioF usuario;
 	private IPagoF pago;
-	private Object object;
 	
 	public ServiceLocator() {
 		if (System.getSecurityManager() == null) {
@@ -36,22 +35,15 @@ public class ServiceLocator{
 	
 	public void setServiceUsuario(String ip, String port, String serverName) {
 		
-		
-		//System.out.println("usuario interfaz: "+ URL);
-		
 		try {		
 			String URL = "//" + ip + ":" + port + "/" + serverName;
-			this.usuario = (IUsuarioF) java.rmi.Naming.lookup(URL);
-			//System.out.println("Clase que nos devuelve: " + Naming.lookup(URL).getClass().toString());
-			
-			
+			this.usuario = (IUsuarioF) java.rmi.Naming.lookup(URL);			
 		} catch (Exception ex) {
 			System.err.println("# Error locating remote facade: " + ex);
 		}		
 	}
 	
 	public void setServicePago(String ip, String port, String serverName) {
-		
 		
 		try {		
 			String URL = "//" + ip + ":" + port + "/" + serverName;

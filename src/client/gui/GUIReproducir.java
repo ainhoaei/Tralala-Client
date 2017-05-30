@@ -20,8 +20,6 @@ import client.controller.ControllerUsuario;
 public class GUIReproducir extends JFrame{
 
 	private JPanel contentPane;
-	private javax.swing.JTextField acronym;
-	private javax.swing.JTextField description;
 	
 	private ControllerUsuario usuarioC;
 	private ControllerCancion cancionC;
@@ -73,9 +71,7 @@ public class GUIReproducir extends JFrame{
 		// Calling the Controller
 		JOptionPane.showMessageDialog(null, "La cancion se reproducirá en la consola");
 		cancionC.playTrack(2);
-		
-		
-	
+
 	}
 
 }
