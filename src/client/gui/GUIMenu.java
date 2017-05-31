@@ -50,12 +50,7 @@ public class GUIMenu extends JFrame {
 		panel.setBounds(12, 13, 408, 227);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
-		//Color JFrame
-       // this.getContentPane().setBackground(Color.orange);
 
-        //Color JPanel
-        //panel.setBackground(Color.orange);
         
 		JLabel lblbienvenidoATralala = new JLabel("¡Aplicacion Tralala!");
 		lblbienvenidoATralala.setFont(new Font("Berlin Sans FB", Font.PLAIN, 16));
