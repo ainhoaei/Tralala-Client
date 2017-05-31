@@ -2,7 +2,7 @@ package client.controller;
 
 import java.rmi.RemoteException;
 
-
+import server.data.data.Usuario;
 import client.remote.ServiceLocator;
 
 public class ControllerUsuario{
@@ -61,23 +61,40 @@ public class ControllerUsuario{
 		*/
 	}
 	
-	public void addUser()
+	public boolean addUser(String user, String pass, String nombre, String apellido, float tipocuenta)
 	{
 		//COMPROBAR EL ARRAY DE USUARIOS QUE NOSOTROS TENEMOS LA HACEMOS NOSOTROS O SE PUEDE
 		//HACER CON LA BASE DE DATOS MIRANDO SI DEVUELVE TRUE O FALSE?
-		boolean resultado =false;;
-		do{
-		System.out.println("Introduzca un nombre de usuario:");
-		String user = System.console().readLine();
-		System.out.println("Introduzca password:");
-		String pass = System.console().readLine();
+		boolean resultado = false;
+		boolean resultado1 =false;
+		boolean resultadofinal = false;
+		
+		
 		try {
 			resultado = serviceLocator.getServiceUsuario().checkAddUser(user);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//serviceLocator.getServiceUsuario().
-		}while(resultado == false);
+		try {
+			resultado1 = serviceLocator.getServiceUsuario().checkUserExterno(user, pass);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		if (resultado == true && resultado1 == true)
+		{
+			Usuario usser = new Usuario(user,nombre, apellido, tipocuenta); 
+			try {
+				serviceLocator.getServiceUsuario().registrarse(usser);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				resultadofinal = true;
+			}
+		}
+		return resultadofinal;
 	}
 }
