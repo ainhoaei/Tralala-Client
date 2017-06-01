@@ -86,15 +86,18 @@ public class ControllerUsuario{
 		
 		if (resultado == true && resultado1 == true)
 		{
-			Usuario usser = new Usuario(user,nombre, apellido, tipocuenta); 
+			
 			try {
-				serviceLocator.getServiceUsuario().registrarse(usser);
+				Usuario usser = new Usuario(user,nombre, apellido, tipocuenta); 
+				serviceLocator.getServiceUsuario().registrarseBD(usser);
 			} catch (RemoteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				resultadofinal = true;
 			}
 		}
+		
+		System.out.println("resultadofinal "+resultadofinal);
 		return resultadofinal;
 	}
 }

@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import client.controller.*;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -102,10 +103,10 @@ public class GUIRegistrar extends JFrame{
 				boolean cortafuegos;
 				 cortafuegos = usuarioC.addUser(user, pass, nombrepasado, apellidopasado, cuentapasada );
 				if(cortafuegos == true){
-					System.out.println("Registro exitoso");
+					JOptionPane.showMessageDialog(null, "Registro exitoso");
 					setVisible(false);
 				}else{
-					System.out.println("Registro fallido. Vuelva a introducir los datos");
+					JOptionPane.showMessageDialog(null, "Registro fallido. Vuelva a introducir los datos");
 				}
 				
 			}
