@@ -17,9 +17,6 @@ import javax.swing.JButton;
 
 public class GUIRegistrar extends JFrame{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField nombreUsuario;
 	private JTextField password;
@@ -80,13 +77,15 @@ public class GUIRegistrar extends JFrame{
 		apellido.setColumns(10);
 		
 		JLabel lblTipoDeCuenta = new JLabel("Tipo de cuenta");
-		lblTipoDeCuenta.setBounds(266, 29, 79, 14);
+		lblTipoDeCuenta.setBounds(266, 29, 108, 14);
 		getContentPane().add(lblTipoDeCuenta);
 		
 		tipocuenta = new JTextField();
 		tipocuenta.setBounds(266, 54, 86, 20);
 		getContentPane().add(tipocuenta);
 		tipocuenta.setColumns(10);
+		
+		this.setSize(400,300);
 		
 		btnRegistro.addActionListener(new ActionListener() {
 
