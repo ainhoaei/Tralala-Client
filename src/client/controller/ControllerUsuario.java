@@ -69,9 +69,8 @@ public class ControllerUsuario{
 		boolean resultado1 =false;
 		boolean resultadofinal = false;
 		
-		
 		try {
-			resultado = serviceLocator.getServiceUsuario().checkAddUser(user);
+			resultado = serviceLocator.getServiceUsuario().checkAddUser(user, nombre, apellido, tipocuenta);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
