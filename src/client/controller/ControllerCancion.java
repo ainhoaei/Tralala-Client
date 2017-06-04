@@ -41,7 +41,11 @@ public class ControllerCancion{
 	
 	public void playTrack(int cancion) {
 		try {
+			//NO ACCEDE A LA BD
 			serviceLocator.getServiceCancion().playTrack(cancion);
+			
+			//ACCEDE A LA BD
+			serviceLocator.getServiceCancion().reproducirBD();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

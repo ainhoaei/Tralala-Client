@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -54,11 +55,11 @@ public class GUIMenu extends JFrame {
         
 		JLabel lblbienvenidoATralala = new JLabel("¡Aplicacion Tralala!");
 		lblbienvenidoATralala.setFont(new Font("Berlin Sans FB", Font.PLAIN, 16));
-		lblbienvenidoATralala.setBounds(125, 0, 179, 16);
+		lblbienvenidoATralala.setBounds(135, 20, 179, 16);
 		panel.add(lblbienvenidoATralala);
 		
 		JButton btnRegistrarse = new JButton("REGISTRARSE");
-		btnRegistrarse.setBounds(100, 100, 200, 50);
+		btnRegistrarse.setBounds(100, 70, 200, 50);
 		btnRegistrarse.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		panel.add(btnRegistrarse);
 		
@@ -73,7 +74,25 @@ public class GUIMenu extends JFrame {
 			}
 		});
 		
+		JButton btnReproducirCancion = new JButton("REPRODUCIR CANCION");
+		btnReproducirCancion.setBounds(100, 140, 200, 50);
+		btnReproducirCancion.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
+		panel.add(btnReproducirCancion);
 		
+		btnReproducirCancion.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				buttonReproducirCancionPerformed(evt);
+			}
+		});
+		
+		
+	}
+	
+	private void buttonReproducirCancionPerformed(ActionEvent evt) {
+		// Calling the Controller
+		JOptionPane.showMessageDialog(null, "La cancion se reproducirá en la consola");
+		cancionC.playTrack(2);
+
 	}
 
 }

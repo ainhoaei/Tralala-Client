@@ -7,7 +7,6 @@ import client.controller.ControllerCancion;
 import client.controller.ControllerPago;
 import client.controller.ControllerUsuario;
 import client.gui.GUIMenu;
-import client.gui.GUIReproducir;
 import client.remote.ServiceLocator;
 
 public class MainPrograma {
@@ -34,9 +33,6 @@ public static void main(String[] args) {
 		
 		GUIMenu mgui = new GUIMenu(irc, rlc, p);
 		mgui.setVisible(true);
-		
-		GUIReproducir rgui = new GUIReproducir(irc, rlc, p);
-		rgui.setVisible(true);
 		
 		
 	}

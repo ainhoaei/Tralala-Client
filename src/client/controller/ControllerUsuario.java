@@ -2,8 +2,8 @@ package client.controller;
 
 import java.rmi.RemoteException;
 
-import server.data.data.Usuario;
 import client.remote.ServiceLocator;
+import server.data.data.Usuario;
 
 public class ControllerUsuario{
 //CON LOS METODOS QUE HAY AQUI ES SUFICIENTE O HAY QUE METER TODOS LOS QUE PUSIMOS
@@ -63,20 +63,21 @@ public class ControllerUsuario{
 	
 	public boolean addUser(String user, String pass, String nombre, String apellido, float tipocuenta)
 	{
-		//COMPROBAR EL ARRAY DE USUARIOS QUE NOSOTROS TENEMOS LA HACEMOS NOSOTROS O SE PUEDE
-		//HACER CON LA BASE DE DATOS MIRANDO SI DEVUELVE TRUE O FALSE?
 		boolean resultado = false;
 		boolean resultado1 =false;
 		boolean resultadofinal = false;
 		
 		try {
-			resultado = serviceLocator.getServiceUsuario().checkAddUser(user, nombre, apellido, tipocuenta);
+			resultado = serviceLocator.getServiceUsuario().checkAddUser(user);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		try {
+			System.out.println("Comprobando el usuario en el servidor externo");
 			resultado1 = serviceLocator.getServiceUsuario().checkUserExterno(user, pass);
+			//resultadofinal = resultado1;
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -89,10 +90,10 @@ public class ControllerUsuario{
 			try {
 				Usuario usser = new Usuario(user,nombre, apellido, tipocuenta); 
 				serviceLocator.getServiceUsuario().registrarseBD(usser);
+				resultadofinal = true;
 			} catch (RemoteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				resultadofinal = true;
 			}
 		}
 		

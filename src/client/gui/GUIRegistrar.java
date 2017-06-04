@@ -1,5 +1,6 @@
 package client.gui;
 
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,11 +35,13 @@ public class GUIRegistrar extends JFrame{
 		this.cancionC = cancionC;
 		this.pagoC = pagoC;
 		
+		setTitle("TRALALA: Registrarse");
 		getContentPane().setLayout(null);
 		getContentPane().setBounds(100, 100, 450, 300);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
 		lblUsuario.setBounds(10, 29, 46, 14);
+		lblUsuario.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		getContentPane().add(lblUsuario);
 		
 		nombreUsuario = new JTextField();
@@ -47,7 +50,8 @@ public class GUIRegistrar extends JFrame{
 		nombreUsuario.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(10, 85, 46, 14);
+		lblPassword.setBounds(10, 85, 108, 14);
+		lblPassword.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		getContentPane().add(lblPassword);
 		
 		password = new JTextField();
@@ -55,12 +59,14 @@ public class GUIRegistrar extends JFrame{
 		getContentPane().add(password);
 		password.setColumns(10);
 		
-		JButton btnRegistro = new JButton("Registro");
-		btnRegistro.setBounds(100, 208, 89, 23);
+		JButton btnRegistro = new JButton("REGISTRO");
+		btnRegistro.setBounds(130, 160, 95, 30);
+		btnRegistro.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		getContentPane().add(btnRegistro);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setBounds(143, 29, 46, 14);
+		lblNombre.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		getContentPane().add(lblNombre);
 		
 		nombre = new JTextField();
@@ -70,6 +76,7 @@ public class GUIRegistrar extends JFrame{
 		
 		JLabel lblApellido = new JLabel("Apellido");
 		lblApellido.setBounds(143, 85, 46, 14);
+		lblApellido.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		getContentPane().add(lblApellido);
 		
 		apellido = new JTextField();
@@ -79,6 +86,7 @@ public class GUIRegistrar extends JFrame{
 		
 		JLabel lblTipoDeCuenta = new JLabel("Tipo de cuenta");
 		lblTipoDeCuenta.setBounds(266, 29, 108, 14);
+		lblTipoDeCuenta.setFont(new Font("Berlin Sans FB", Font.PLAIN, 12));
 		getContentPane().add(lblTipoDeCuenta);
 		
 		tipocuenta = new JTextField();
